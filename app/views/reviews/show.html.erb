@@ -12,7 +12,8 @@
 
 <%= link_to 'Edit', edit_review_path(@review) %> |
 <% if @review.product.nil? %>
-  <%= link_to 'Back', reviews_path %>
+  <%= link_to 'Back', reviews_path %> |
   <% else %>
-  <%= link_to 'Back', @review_path %>
+  <%= link_to 'Back', @review_path %> |
 <% end %>
+<%= link_to 'Home', products_path %>

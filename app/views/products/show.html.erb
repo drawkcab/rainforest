@@ -15,13 +15,15 @@
   <%= @product.formatted_price %>
 </p>
 
+<hr>
+
 <h3>Review</h3>
 
 <% @product.reviews.each do |review| %>
   <p>
     <%= review.comment %>
     <br>
-    Added on: <%= review.created_at %>
+    Added on: <%= time_ago_in_words review.created_at %>
   </p>
 <% end %>
 
