@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_filter :authorize
+
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
@@ -55,7 +57,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-    
+
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
@@ -73,4 +75,6 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :description, :price_in_cents)
     end
+    protected
+
 end
